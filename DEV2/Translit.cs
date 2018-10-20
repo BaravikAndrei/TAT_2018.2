@@ -9,9 +9,9 @@ namespace DEV2
     static class Translit
     {
 	    // Realisation of transliteration inputed string.  
-        public static string Transliteration(this string args)
+        public static string Transliteration(this string[] args)
         {
-            StringBuilder InputedString = new StringBuilder(args);
+            StringBuilder InputedString = new StringBuilder(args[0].ToLower());
             //Inputed string language definition.
             char check=InputedString[0];
             //If language of inputed string is russian transsliteration in english.
@@ -49,6 +49,9 @@ namespace DEV2
                 InputedString.Replace("э","e");
                 InputedString.Replace("ю","yu");
                 InputedString.Replace("я","yа");
+                InputedString.Replace("ь",string.Empty);
+                InputedString.Replace("ъ",string.Empty);
+
             }
             //If language of inputed string is english transsliteration in russian.
             else
@@ -84,9 +87,7 @@ namespace DEV2
                 InputedString.Replace("u","у");
                 InputedString.Replace("f","ф");   
             }
-
-            string ReturnString=InputedString.ToString();
-            return ReturnString;  //Return transliterated string
+            return InputedString.ToString();  //Return transliterated string
         }
     }
 }
