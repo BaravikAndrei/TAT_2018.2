@@ -17,24 +17,33 @@ namespace DEV2
        public static void Main(string[] args)
         {    
             // checking for empty input line
-            if (args.Length==0)
+            try
             {
-                Console.WriteLine("You didn't input a string line");
-                Console.ReadKey();
-            }
-            else
-            {
-                if (args.CheckInputedString())
+
+            
+                if (args.Length==0)
                 {
-                    Console.WriteLine (args.Transliteration());
+                    Console.WriteLine("You didn't input a string line");
                     Console.ReadKey();
                 }
                 else
                 {
-                    Console.WriteLine ("inputed uncorrect string");
-                    Console.ReadKey();
-                } 
-             }
+                    if (args.CheckInputedString())
+                    {
+                        Console.WriteLine (args.Transliteration());
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine ("inputed uncorrect string");
+                        Console.ReadKey();
+                    } 
+                 }
+            }
+            catch (Exception)
+            {
+                 Console.WriteLine("program execution error");
+            }
         }   
     }
 }
