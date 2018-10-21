@@ -2,13 +2,17 @@
 
 namespace DEV2
 {  
-    /*
-	    Class for transliteration inputed string.
-	    Contains the method of transliteration.
-	*/
+    /// <summary>
+    /// Class for transliteration inputed string.
+	///   Contains the method of transliteration to russian (or english).
+    /// </summary>
     static class Translit
     {
-	    // Realisation of transliteration inputed string.  
+        /// <summary> 
+        /// Method Transliteration
+        /// function for determine from which language to which we will transliteration the string
+        /// </summary> 
+        /// <param name="args">String, which was inputed</param>
         public static string Transliteration(this string[] args)
         {
             StringBuilder InputedString = new StringBuilder(args[0].ToLower());
@@ -51,7 +55,6 @@ namespace DEV2
                 InputedString.Replace("я","yа");
                 InputedString.Replace("ь",string.Empty);
                 InputedString.Replace("ъ",string.Empty);
-
             }
             //If language of inputed string is english transsliteration in russian.
             else
