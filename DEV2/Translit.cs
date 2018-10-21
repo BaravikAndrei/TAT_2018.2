@@ -4,7 +4,7 @@ namespace DEV2
 {  
     /// <summary>
     /// Class for transliteration inputed string.
-	///   Contains the method of transliteration to russian (or english).
+	/// Contains the method of transliteration to russian (or english).
     /// </summary>
     static class Translit
     {

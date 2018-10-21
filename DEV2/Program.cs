@@ -3,7 +3,7 @@ using System.Text;
 
 namespace DEV2
 {
-   /// <summary>
+    /// <summary>
     /// The Transliteration method takes a string in Russian (or in Latin) language
     /// and translates the string into the required language
     /// The CheckInputedString method check inputed string for the presence of characters of only one alphabet
@@ -17,7 +17,6 @@ namespace DEV2
        public static void Main(string[] args)
         {    
             // checking for empty input line
-            //string input=args.InputString();
             if (args.Length==0)
             {
                 Console.WriteLine("You didn't input a string line");
