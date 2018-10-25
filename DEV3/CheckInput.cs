@@ -8,35 +8,21 @@ namespace DEV3
     class CheckInput
     {   
        /// <summary> 
-       /// Method check_for_correct_input
+       /// Method CheckForCorrectInput
        /// function for check inputed strings for the presence of value of only integer and system only from 2 to 20.
        /// </summary> 
        /// <param name="taked_value">Value in deciml system</param>
        /// <param name="taked_number_of_system">Number of system to convert</param>
-       bool returnvalue=false;
-       public bool check_for_correct_input(string taked_value, string taked_number_of_system)
+       public bool CheckForCorrectInput(string TakedValue, string TakedNumberOfSystem)
        {    
-           //checking for empty input
-           if (taked_value.Length==0 || taked_number_of_system.Length==0)
+           bool returnvalue = false;  //return false or true if input incorrect or correct respectively
+           //checking for empty input; checking for integer input;  checking for range of number of system.
+           if ((TakedValue.Length > 0 && TakedNumberOfSystem.Length > 0) && (Convert.ToDouble(TakedValue) == Convert.ToInt32(TakedValue)) &&
+           (Convert.ToInt32(TakedNumberOfSystem) >= 2 && Convert.ToInt32(TakedNumberOfSystem) <= 20))
            {
-               returnvalue=false;
+               returnvalue = true;
            }
-           //checking for integer input
-           else if(Convert.ToDouble(taked_value)!=Convert.ToInt32(taked_value))
-           {
-               returnvalue=false;
-           }
-           //checking for range of number of system.
-           else if(Convert.ToInt32(taked_number_of_system)<2 || Convert.ToInt32(taked_number_of_system)>20)
-           {
-               returnvalue=false;
-           }
-           //if input not empty,  value is integer and the range of system is between 2 and 20 return true.
-           else
-           {
-               returnvalue=true;
-           }
-           return returnvalue; //return bool value
+           return returnvalue; //return bool value.
         }
     }
 }
