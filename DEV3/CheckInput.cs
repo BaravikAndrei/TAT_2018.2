@@ -3,7 +3,7 @@
 namespace DEV3
 {
     /// <summary>
-    /// The CheckInput class check inputed strings for the presence of value of only integer and system only from 2 to 20.
+    /// The CheckInput class check inputed strings for the presence of value and system only from 2 to 20.
     /// </summary>
     class CheckInput
     {   
@@ -13,16 +13,15 @@ namespace DEV3
        /// </summary> 
        /// <param name="taked_value">Value in deciml system</param>
        /// <param name="taked_number_of_system">Number of system to convert</param>
-       public bool CheckForCorrectInput(string TakedValue, string TakedNumberOfSystem)
+       public bool CheckForCorrectInput(string decimalValue, string radix)
        {    
-           bool returnvalue = false;  //return false or true if input incorrect or correct respectively
-           //checking for empty input; checking for integer input;  checking for range of number of system.
-           if ((TakedValue.Length > 0 && TakedNumberOfSystem.Length > 0) && (Convert.ToDouble(TakedValue) == Convert.ToInt32(TakedValue)) &&
-           (Convert.ToInt32(TakedNumberOfSystem) >= 2 && Convert.ToInt32(TakedNumberOfSystem) <= 20))
+           bool returnValue = false;  //return false or true if input incorrect or correct respectively
+           //checking for empty input; checking for range of number of system.
+           if ((decimalValue.Length > 0 && radix.Length > 0) && (Convert.ToInt32(radix) >= 2 && Convert.ToInt32(radix) <= 20))
            {
-               returnvalue = true;
+               returnValue = true;
            }
-           return returnvalue; //return bool value.
+           return returnValue; //return bool value.
         }
     }
 }

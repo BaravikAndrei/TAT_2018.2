@@ -18,12 +18,11 @@ namespace DEV3
          {
             try
             {
-                CheckInput Check = new CheckInput();
-                if (Check.CheckForCorrectInput(args[0], args[1]))
+                CheckInput check = new CheckInput();
+                if (check.CheckForCorrectInput(args[0], args[1]))
                 { 
-                    TransferToAnotherNumberSystem value = new TransferToAnotherNumberSystem();
-                    string TransfredValue = value.TransferValueToAnotherNumberSystem(args[0], args[1]);
-                    Console.WriteLine(TransfredValue);
+                    TransferToAnotherNumberSystem convertedValue = new TransferToAnotherNumberSystem();
+                    Console.WriteLine(convertedValue.TransferValueToAnotherNumberSystem(args[0], args[1]));
                 }
                 else
                 {
@@ -34,6 +33,7 @@ namespace DEV3
             {
                 Console.WriteLine("Incorrect input");
             }
+            Console.ReadKey();
             
         }
     }

@@ -10,44 +10,53 @@ namespace DEV3
     class TransferToAnotherNumberSystem
     {
         /// <summary> 
-        /// Method string_of_possible_values_of_the_system.
-        /// function transfer from decimal to another number system.
+        /// Method TransferValueToAnotherNumberSystem.
+        /// function transfer from decimal system to another selected system with radix from 2 to 20.
         /// </summary> 
         /// <param name="taked_value">Value in deciml system</param>
         /// <param name="taked_number_of_system">Number of system to convert</param>
-        public string[] PossibleValuesOfTheSystem = { "0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J" }; //string of possible values of the system 
+        public string[] PossibleValuesOfTheSystem = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C",
+        "D", "E", "F", "G", "H", "I", "J" };  //string of possible values of the radix 
 
-        public string TransferValueToAnotherNumberSystem(string taked_value, string taked_number_of_system)
+        public string TransferValueToAnotherNumberSystem(string valueInDecimalSystem, string newRadix)
         {   
+            StringBuilder convertedValue=new StringBuilder();
             //convert inputed strings into integer vaalues.
-            int inputed_value=Convert.ToInt32(taked_value); 
-            int number_of_system= Convert.ToInt32(taked_number_of_system);
-            StringBuilder NewString=new StringBuilder();
+            int inputedValue = Convert.ToInt32(valueInDecimalSystem); 
+            int numberOfRadix = Convert.ToInt32(newRadix);
+            //check for negative value 
+            string sign ="";
+            if (inputedValue < 0)
+            {
+                inputedValue = inputedValue * -1;
+                sign="-";
+            }
             //transfer value from decimal to selected system.
-            int i=0;
+            int i = 0;
             for (; ; )
             {
-                if (inputed_value>=number_of_system)
+                if (inputedValue >= numberOfRadix)
                 {
-                    if (inputed_value % number_of_system ==0)
+                    if (inputedValue % numberOfRadix == 0)
                     {
-                        NewString.Insert (0, PossibleValuesOfTheSystem[0]);
-                        inputed_value /= number_of_system;
+                        convertedValue.Insert (0, PossibleValuesOfTheSystem[0]);
+                        inputedValue /= numberOfRadix;
                     }
-                    else if (inputed_value % number_of_system >0)
+                    else if (inputedValue % numberOfRadix > 0)
                     {
-                        NewString.Insert (0, PossibleValuesOfTheSystem[inputed_value % number_of_system]);
-                        inputed_value = inputed_value / number_of_system;
+                        convertedValue.Insert (0, PossibleValuesOfTheSystem[inputedValue % numberOfRadix]);
+                        inputedValue = inputedValue / numberOfRadix;
                     }
                 }
-                else if(inputed_value<number_of_system)
+                else if(inputedValue < numberOfRadix)
                 {
-                    NewString.Insert (0, PossibleValuesOfTheSystem[inputed_value]);
+                    convertedValue.Insert (0, PossibleValuesOfTheSystem[inputedValue]);
                     break;
                 }
                 i++;
             }
-            return NewString.ToString(); //return transfer value.
+            convertedValue.Insert (0, sign);
+            return convertedValue.ToString(); //return converted value.
         }
     }
 }
