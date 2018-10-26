@@ -32,9 +32,7 @@ namespace DEV3
             catch(Exception)
             {
                 Console.WriteLine("Incorrect input");
-            }
-            Console.ReadKey();
-            
+            }   
         }
     }
 }
