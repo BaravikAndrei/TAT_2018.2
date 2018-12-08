@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KW1
 {
@@ -16,11 +12,18 @@ namespace KW1
             try
             {
                 SymbolsRepeatCounter symbolsRepeatCount = new SymbolsRepeatCounter();
-                Console.WriteLine(symbolsRepeatCount.CountRepeatSymbols(args[0]));
+                if (args[0] == string.Empty)
+                {
+                    Console.WriteLine("Incorrect input");
+                }
+                else
+                {
+                    Console.WriteLine(symbolsRepeatCount.CountRepeatSymbols(args[0]));
+                }
             }
             catch (Exception)
             {
-                Console.WriteLine("Program crash");
+                Console.WriteLine("Incorrect input");
             }
         }
     }

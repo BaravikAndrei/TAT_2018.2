@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KW1
 {
@@ -18,17 +15,11 @@ namespace KW1
         /// <returns>String with column of symbels and column of count repeatings this symbols.></returns>
         public string CountRepeatSymbols(string args)
         {
-            int curSize = 0;    
             int N = args.Length;
             StringBuilder returnValue = new StringBuilder();
             int[] memorizing_duplicate = new int[256]; //256 is max value of symbol in  ASCII table
-            if(args.Length == 0)
-            {
-                Console.WriteLine("Empty string");
-            }
-            else
-            {
-                for (int curElementIndex = 0; curElementIndex < args.Length; curElementIndex++)
+
+            for (int curElementIndex = 0; curElementIndex < args.Length; curElementIndex++)
             {
                 memorizing_duplicate[args[curElementIndex]]++;
             }
@@ -41,9 +32,8 @@ namespace KW1
                     returnValue.Append("\n");
                 }
             }
-            }
-            
             return returnValue.ToString();
         }
     }
 }
+
