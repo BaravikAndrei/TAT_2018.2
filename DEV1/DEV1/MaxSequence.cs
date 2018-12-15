@@ -29,17 +29,16 @@ namespace DEV1
             {
                 int curSize = 0;
                 int curElementIndex = 0;
-                int N = args.Length;
-                bool[] memorizing_duplicate = new bool[256]; //256 is max value of symbol in  ASCII table   
-                for (int start = 0; start < N; start++)
+                bool[] memorizingDuplicate = new bool[256]; //256 is max value of symbol in  ASCII table   
+                for (int start = 0; start < args.Length; start++)
                 {
                     curElementIndex = start;
-                    while (curElementIndex < N)
+                    while (curElementIndex < args.Length)
                     {
-                        if (!memorizing_duplicate[args[curElementIndex]] && curElementIndex < N)
+                        if (!memorizingDuplicate[args[curElementIndex]] && curElementIndex < args.Length)
                         {
                             curSize++;
-                            memorizing_duplicate[args[curElementIndex]] = true;
+                            memorizingDuplicate[args[curElementIndex]] = true;
                             curElementIndex++;
                         }
                         else
@@ -50,9 +49,9 @@ namespace DEV1
                         maxSize = curSize;
                     }
                     curSize = 0;
-                    for (int i = 0; i < memorizing_duplicate.Length; i++)
+                    for (int i = 0; i < memorizingDuplicate.Length; i++)
                     {
-                        memorizing_duplicate[i] = false;
+                        memorizingDuplicate[i] = false;
                     }
                 }
             }
