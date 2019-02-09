@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<trucks>
+  <truck>
+    <brand>Mercedes</brand>
+    <model>Benz</model>
+    <quantity>194</quantity>
+    <price>11200</price>
+  </truck>
+  <truck>
+    <brand>Mercedes</brand>
+    <model>SomeModel</model>
+    <quantity>14</quantity>
+    <price>11100</price>
+  </truck>
+  <truck>
+    <brand>Lada</brand>
+    <model>SomeTruck</model>
+    <quantity>7</quantity>
+    <price>20000</price>
+  </truck>
+  <truck>
+    <brand>Maz</brand>
+    <model>MazTruck</model>
+    <quantity>3</quantity>
+    <price>21000</price>
+  </truck>
+  <truck>
+    <brand>Iphone</brand>
+    <model>X</model>
+    <quantity>97</quantity>
+    <price>999</price>
+  </truck>
+</trucks>

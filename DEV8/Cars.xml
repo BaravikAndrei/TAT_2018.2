@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cars>
+  <car>
+    <brand>BMW</brand>
+    <model>X5</model>
+    <quantity>11</quantity>
+    <price>11000</price>
+  </car>
+  <car>
+    <brand>BMW</brand>
+    <model>X6</model>
+    <quantity>14</quantity>
+    <price>12000</price>
+  </car>
+  <car>
+    <brand>Lada</brand>
+    <model>Sidan</model>
+    <quantity>7</quantity>
+    <price>2000</price>
+  </car>
+  <car>
+    <brand>Moskvich</brand>
+    <model>SomeModel</model>
+    <quantity>3</quantity>
+    <price>1000</price>
+  </car>
+  <car>
+    <brand>Iphone</brand>
+    <model>XS</model>
+    <quantity>97</quantity>
+    <price>1000</price>
+  </car>
+</cars>
